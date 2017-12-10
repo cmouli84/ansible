@@ -1,4 +1,4 @@
-- name: Add EPEL repository
+- name: add epel repository
   yum_repository:
     name: epel
     description: EPEL YUM repo
@@ -8,7 +8,7 @@
     state: present
     key: https://packages.microsoft.com/keys/microsoft.asc
 
-- name: Add VS Code repository
+- name: add vs code repository
   yum_repository:
     name: vscode
     description: Visual Studio Code YUM repo
