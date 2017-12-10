@@ -1,0 +1,12 @@
+---
+- hosts: sandbox
+  become: true
+  vars:
+    ansible_path: /home/csubbrayalu/ansible
+  roles:
+    - setup
+    - add-repos
+    - yum-pkg
+    - yum-acc-pkg
+    - yum-editor-pkg
+#    - python3

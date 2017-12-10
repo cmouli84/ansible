@@ -1,0 +1,4 @@
+- file:
+    path: "{{ ansible_path }}/tmp"
+    state: directory
+    mode: 0755

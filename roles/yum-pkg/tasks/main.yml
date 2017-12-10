@@ -1,0 +1,12 @@
+- name: install git, python, pip, node, zsh, golang
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - git
+    - python
+    - python-pip
+    - npm
+    - zsh
+    - golang
+    - java-1.8.0-openjdk-devel 

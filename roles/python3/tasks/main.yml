@@ -1,0 +1,25 @@
+---
+- name: Downloading Python 3
+  get_url: 
+    url: https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
+    dest: "{{ ansible_path}}/tmp/Python-3.4.3.tar.xz"
+
+- name: Extracting Python 3
+  unarchive:
+    src: "{{ ansible_path }}/tmp/Python-3.4.3.tar.xz"
+    dest: "{{ ansible_path }}/tmp"
+
+- name: Building Python 3
+  command: ./configure
+  args:
+    chdir: "{{ ansible_path }}/tmp/Python-3.4.3"
+
+- name: Make Python 3
+  command: make
+  args:
+    chdir: "{{ ansible_path }}/tmp/Python-3.4.3"
+
+- name: Installing Python 3
+  command: make install
+  args:
+    chdir: "{{ ansible_path }}/tmp/Python-3.4.3"

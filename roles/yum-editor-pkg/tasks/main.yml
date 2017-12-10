@@ -1,0 +1,6 @@
+- name: install vs code
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - code
