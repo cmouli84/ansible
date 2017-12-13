@@ -1,7 +1,9 @@
-- name: install vlc
+- name: installing vlc, ktorrent and gimp
   yum:
     name: "{{ item }}"
     state: latest
   with_items:
     - vlc
     - vlc-core
+    - ktorrent
+    - gimp

@@ -1,14 +1,21 @@
-- name: add epel repository
+- name: adding epel repository
   yum_repository:
     name: epel
     description: EPEL YUM repo
     baseurl: https://download.fedoraproject.org/pub/epel/7/x86_64/
 
+- name: adding rpm forge extras repository
+  yum_repository:
+    name: rpmforge-extras
+    description: RPM Forge extras YUM repo
+    baseurl: http://repoforge.cu.be/redhat/el7/en/noarch/rpmforge
+    enabled: 0
+
 - rpm_key:
     state: present
     key: https://packages.microsoft.com/keys/microsoft.asc
 
-- name: add vs code repository
+- name: adding visual studio code repository
   yum_repository:
     name: vscode
     description: Visual Studio Code YUM repo

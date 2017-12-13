@@ -1,4 +1,4 @@
-- name: install vs code
+- name: installing vs code
   yum:
     name: "{{ item }}"
     state: latest

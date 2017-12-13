@@ -1,4 +1,11 @@
-- name: install git, python, pip, node, zsh, golang
+#- name: installing git
+#  yum:
+#    name: git
+#    state: latest
+#    disablerepo: base,updates
+#    enablerepo: rpmforge-extras
+#
+- name: installing git, python, pip, node, zsh, golang
   yum:
     name: "{{ item }}"
     state: latest
