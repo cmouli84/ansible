@@ -1,0 +1,11 @@
+- name: installing wireshark, docker
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - wireshark
+    - docker
+
+- service:
+    name: docker
+    state: started

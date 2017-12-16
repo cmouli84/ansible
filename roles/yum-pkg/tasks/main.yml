@@ -5,7 +5,7 @@
 #    disablerepo: base,updates
 #    enablerepo: rpmforge-extras
 #
-- name: installing git, python, pip, node, zsh, golang
+- name: installing git, python, pip, node, zsh, golang, java, awscli
   yum:
     name: "{{ item }}"
     state: latest
@@ -17,3 +17,4 @@
     - zsh
     - golang
     - java-1.8.0-openjdk-devel 
+    - awscli

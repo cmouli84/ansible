@@ -7,6 +7,8 @@
     - setup
     - add-repos
     - yum-pkg
+    - yum-util-pkg
     - yum-acc-pkg
     - yum-editor-pkg
+    - terraform
 #    - python3
