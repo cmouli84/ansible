@@ -1,0 +1,5 @@
+---
+- name: Download bash to install gcloud sdk
+  get_url:
+    url: "https://sdk.cloud.google.com"
+    dest: "{{ ansible_path }}/tmp/gcloud.sh"

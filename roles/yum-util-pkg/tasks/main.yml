@@ -1,10 +1,12 @@
-- name: installing wireshark, docker
+- name: installing wireshark, docker, htop, kubernetes
   yum:
     name: "{{ item }}"
     state: latest
   with_items:
     - wireshark
     - docker
+    - htop
+    - kubernetes
 
 - service:
     name: docker

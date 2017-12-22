@@ -11,4 +11,5 @@
     - yum-acc-pkg
     - yum-editor-pkg
     - terraform
+#    - gcloud
 #    - python3

@@ -1,0 +1,12 @@
+---
+- name: Check if gcloud is installed
+  shell: "gcloud --version 2>&1"
+  failed_when: false
+  changed_when: false
+  register: gcloud_exists
+
+- include_tasks: download.yml
+  when: gcloud_exists.rc != 0
+
+- script: "{{ ansible_path }}/tmp/gcloud.sh"
+  when: gcloud_exists.rc != 0
