@@ -1,10 +1,11 @@
-- name: installing vlc, ktorrent, gimp, rhythmbox
+- name: installing vlc, chrome, ktorrent, gimp, rhythmbox
   yum:
     name: "{{ item }}"
     state: latest
   with_items:
     - vlc
     - vlc-core
+    - google-chrome-stable
     - ktorrent
     - gimp
     - rhythmbox

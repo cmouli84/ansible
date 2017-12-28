@@ -4,12 +4,10 @@
     description: EPEL YUM repo
     baseurl: https://download.fedoraproject.org/pub/epel/7/x86_64/
 
-- name: adding rpm forge extras repository
-  yum_repository:
-    name: rpmforge-extras
-    description: RPM Forge extras YUM repo
-    baseurl: http://repoforge.cu.be/redhat/el7/en/noarch/rpmforge
-    enabled: 0
+- name: enabling rpm fusion free repo
+  yum:
+    name: https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+    state: present
 
 - rpm_key:
     state: present
@@ -23,3 +21,12 @@
     enabled: 1
     gpgcheck: 1
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: adding chrome repo
+  yum_repository:
+    name: google-chrome
+    description: Google chrome YUM repo
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/$basearch
+    enabled: 1
+    gpgcheck: 1
+    gpgkey: https://dl-ssl.google.com/linux/linux_signing_key.pub
